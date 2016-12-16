@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>小鲸鱼直播</title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+
+		<style>
+			.mui-input-group:before {
+				height: 0px;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				height: 0px;
+			}
+			
+			.mui-input-group:after {
+				height: 0px;
+			}
+			
+			.headPicture {
+				padding: 10px;
+				text-align: center;
+			}
+			
+			.headPicture img {
+				height: 100px;
+				width: 100px;
+				border-radius: 50%;
+			}
+			
+			#bd {
+				background: #efeff4;
+				text-align: center;
+				margin: 0 auto;
+				width: 70%;
+			}
+			
+			#name {
+				background: #0fff;
+				border: 1px solid #007AFF;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			
+			#psd {
+				background: #0fff;
+				border: 1px solid #007AFF;
+				border-top: 0px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+			
+			button {
+				width: 100px;
+			}
+			
+			.white-center {
+				text-align: center;
+				color: #fff;
+				margin: -5px;
+				padding: 5px 0;
+			}
+			
+			.divCard {
+				background: #7D9EC0;
+				width: 95%;
+				text-align: center;
+				margin: 0 auto;
+				border-radius: 5px;
+				margin-top: 5px;
+				overflow: hidden;
+			}
+			
+			.block2 {
+				float: left;
+				width: 51%;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">我的</h1>
+		</header>
+		<!--修改-->
+		<div id="change" class="mui-popover" style="width: 100px;">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#popover">修改头像</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a id="xgqm" href="#popover" a="#div_change_qianmin">修改签名</a>
+				</li>
+			</ul>
+		</div>
+		<!--主页面内容容器 -->
+		<div class="mui-content mui-scroll-wrapper" id="mainactivity">
+			<!--页面滚动-->
+			<div class="mui-scroll">
+				<!--直播-->
+				<div id="live-page" class="mui-control-content">
+					<div class="mui-input-row mui-search">
+						<input type="search" class="mui-input-clear" placeholder="您想搜索什么直播？">
+					</div>
+
+				</div>
+				<!--我的-->
+				<div id="mine-page" class="mui-control-content">
+					<div class="headPicture"><img src="images/xjy.jpg" /></div>
+					<form class="mui-input-group" id="bd">
+						<div class="mui-input-row" id="name">
+							<label>用户名</label>
+							<input id="username" type="text" class="mui-input-clear mui-input-speech" placeholder="请输入用户名">
+						</div>
+						<div class="mui-input-row" id="psd">
+							<label>密码</label>
+							<input id="password" type="password" class="mui-input-password" placeholder="请输入密码">
+						</div>
+						<div class="mui-button-row">
+							<button id="reg" type="button" class="mui-btn mui-btn-primary">注册</button>
+							<button id="log" type="button" class="mui-btn mui-btn-green">登录</button>
+						</div>
+					</form>
+				</div>
+				<!--登录进入我的-->
+				<div id="mine-loged" class="mui-control-content mui-active">
+					<div class="divCard">
+						<a href="#change" id="openSheet" class="mui-btn-block" style="text-align: right;padding: 10px;margin: 0px;">
+							<span class="mui-icon mui-icon-gear" style="color: white;"></span>
+						</a>
+
+						<div class="headPicture" style="margin-top: -40px;">
+							<img src="images/xjy.jpg" />
+						</div>
+						<div>
+							<div class="white-center block2">
+								<div id="huanyin" style="color: #fff;">欢迎</div>
+							</div>
+							<div class="white-center block2">
+								<div id="level" style="color: #fff;">等级：</div>
+							</div>
+						</div>
+						<br /><br />
+						<div id="qianmin" class="white-center" style="margin-top: -20px;margin-bottom: 1px;">
+							Ta好像忘记写签名了……
+						</div>
+					</div>
+					<div class="divCard">
+						<div class="white-center block2">
+							<p id="guanzhu" style="color: #fff;margin-top: 10px;">关注：</p>
+						</div>
+						<div class="white-center block2">
+							<p id="fans" style="color: #fff;margin-top: 10px;">粉丝：</p>
+						</div>
+						<div class="white-center block2">
+							<p id="weight" style="color: #fff;">吨位：</p>
+						</div>
+						<div class="white-center block2">
+							<p id="money" style="color: #fff;">小鱼：</p>
+						</div>
+					</div>
+					<div class="divCard">
+						<button type="button" class="mui-btn" style="background: #7D9EC0;color: #fff;margin: 20px 10px 5px 0;">
+						充值小鱼
+					</button>
+						<button type="button" class="mui-btn" style="background: #7D9EC0;color: #fff;margin: 20px 0 5px 10px;">
+						兑换小鱼
+					</button><br />
+						<button type="button" class="mui-btn" style="background: #7D9EC0;color: #fff;margin: 20px 0 20px 0;">
+						开始直播
+					</button>
+					</div>
+
+				</div>
+				<!--修改签名-->
+				<div id="div_change_qianmin" class="mui-control-content divCard">
+					<h3 style="float: left;margin-left: 15px; margin-top: 15px;color: #fff;">修改签名：</h3>
+					<input id="input_change_qianmin" type="text" class="mui-input-clear" style="width: 90%;background: #7D9EC0;color: #fff;" placeholder="请输入你的签名（字数限制 20）">
+					<button id="button_change_qianmin" type="button" class="mui-btn" style="background: #7D9EC0;color: #fff; margin-bottom: 15px;">提交</button>
+					<button id="button_fanhui_qianmin" type="button" class="mui-btn" style="background: #7D9EC0;color: #fff; margin-bottom: 15px;">返回</button>
+				</div>
+
+				<!--视频-->
+				<div id="vod-page" class="mui-control-content">
+					<div class="mui-input-row mui-search">
+						<input type="search" class="mui-input-clear" placeholder="您想搜索什么视频？">
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" a="#live-page">
+				<span class="mui-icon mui-icon-videocam" style="font-size: 24px;"></span>
+				<span class="mui-tab-label" id="zzzb">正在直播</span>
+			</a>
+			<a id="wd_tab" class="mui-tab-item mui-active" a="#mine-loged" style="background: #4CD964;" id="mine-tab">
+				<span class="mui-icon mui-icon-person" style="height: 50px;width: 50px;font-size: 40px;"></span>
+				<span class="mui-tab-label" id="wd"></span>
+			</a>
+			<a class="mui-tab-item" a="#vod-page">
+				<span class="mui-icon mui-icon-paperplane" style="font-size: 24px;"></span>
+				<span class="mui-tab-label" id="jcsk">精彩时刻</span>
+			</a>
+		</nav>
+	</body>
+	<script type="text/javascript">
+		loged = 0;
+
+		$(function() {
+			$("nav a").bind("tap", function() {
+				if(loged == 1) {
+					$("#zzzb").text("正在直播");
+					$("#wd").text("我的");
+					$("#jcsk").text("精彩时刻");
+					$("nav a span.mui-icon").attr("style", "height: 24px;width: 24px;font-size: 24px;");
+					$("nav a").attr("style", "background: #efeff4;");
+					$(this).attr("style", "background: #4CD964;"); //改背景色
+					$("header h1").text($(this).text()); //替换标题
+					$(this).children(".mui-tab-label").text(""); //清空当前text
+					$(this).children(".mui-icon").attr("style", "height: 50px;width: 50px;font-size: 40px;"); //放大图标
+					var a = $(this).attr("a");
+					$(".mui-scroll>div").each(function() {
+						$(this).hide();
+					})
+					$(a).show();
+				} else {
+					alert('请先登录！');
+				}
+			});
+			$('#xgqm').bind('tap', function() {
+				$('#mine-loged').hide();
+				$('#div_change_qianmin').show();
+				mui('#change').popover('toggle');
+			});
+			$('#button_fanhui_qianmin').bind('tap', function() {
+				f_loged();
+				$('#div_change_qianmin').hide();
+				$('#mine-loged').show();
+			});
+		});
+
+		//判断输入框为空
+		function isNull(username, password) {
+			if(username == '' || username == null || password == '' || password == null) {
+				return 1;
+			}
+		}
+		mui.plusReady(function() {
+			//注册点击事件
+			document.getElementById('reg').addEventListener('tap', function() {
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				if(isNull(username, password)) {
+					mui.toast('不能为空！');
+				} else {
+					//					mui.toast('注册中');
+					mui.post('http://newbie.tunnel.qydev.com/reg.php', {
+						username: username,
+						password: password
+					}, function(data) {
+						mui.toast(data);
+						if(data == '注册成功，即将自动登录') {
+							loged = 1;
+							f_loged();
+							$('#mine-page').attr("class", "mui-control-content");
+							$('#mine-loged').attr("class", "mui-control-content mui-active");
+						}
+					}, 'json');
+				}
+			});
+			//登录点击事件
+			document.getElementById('log').addEventListener('tap', function() {
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				if(isNull(username, password)) {
+					mui.toast('不能为空！');
+				} else {
+					//					mui.toast('登录中');
+					mui.post('http://newbie.tunnel.qydev.com/log.php', {
+						username: username,
+						password: password
+					}, function(data) {
+						mui.toast(data);
+						if(data == '登录成功') {
+							loged = 1;
+							f_loged();
+							$('#mine-page').hide();
+							$('#mine-loged').show();
+						}
+					}, 'json');
+				}
+			});
+			//修改签名点击事件
+			document.getElementById('button_change_qianmin').addEventListener('tap', function() {
+				var username = document.getElementById('username').value;
+				var qianmin = document.getElementById('input_change_qianmin').value;
+				if(qianmin != null) {
+					mui.post('http://newbie.tunnel.qydev.com/change_qianmin.php', {
+						username: username,
+						qianmin: qianmin
+					}, function(data) {
+						mui.toast(data);
+						f_loged();
+						$('#div_change_qianmin').hide();
+						$('#mine-loged').show();
+					}, 'json');
+				}
+			});
+			//mine-loged加载函数
+			function f_loged() {
+				username = document.getElementById('username').value;
+				mui.post('http://newbie.tunnel.qydev.com/wd_inf.php', {
+					username: username
+				}, function(data) {
+					$('#huanyin').text('欢迎          ' + username);
+					$('#level').text('等级：' + data.level);
+					$('#weight').text('吨位：' + data.weight);
+					$('#money').text('小鱼：' + data.money);
+					$('#qianmin').text(data.qianmin);
+					$('#guanzhu').text('关注：' + data.guanzhu);
+					$('#fans').text('粉丝：' + data.fans);
+				}, 'json');
+			}
+		});
+	</script>
+
+</html>

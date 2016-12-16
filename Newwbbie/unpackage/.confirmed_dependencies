@@ -1,0 +1,17 @@
+{
+	"index.html": {
+		"resources": [
+			"images/android.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/jquery.js",
+			"images/xjy.jpg",
+			"js/modernizr.custom.js",
+			"css/animations.css",
+			"css/component.css",
+			"css/default.css",
+			"css/multilevelmenu.css"
+		]
+	}
+}
